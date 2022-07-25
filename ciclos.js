@@ -1,19 +1,28 @@
-/*
+//Con FOR
+debugger
+
 let limite= parseInt(prompt("Ingrese un numero:"))
-for(let i= 0; i<limite; i++){
-console.log("numeritos", i )
+for(let i= 15; i<limite; i++){
+console.log("Hello Emi", i )
 
-}*/
+}
 
-//debugger
+//Con While
 
-while(login === false) {
+/*debugger
+
+let usuario= ""
+let password= ""
+let resultado= true
+
+while(resultado) {
     usuario = prompt("Ingresa tu usuario:")
     password = prompt("Ingresa tu clave:")
-    if (usuario === "Alejandra Francavilla" && password === "Aprobada") {
+    if (usuario === "Alejandra Francavilla" && password === "alecoder") {
         console.log("Bienvenido querido usuario", usuario)
-        login = true
+        resultado = false
     } else {
-        alert("⛔️ Usuario o clave invalida")
+        console.log ("Usuario o clave invalida")
     }
 }
+*/
