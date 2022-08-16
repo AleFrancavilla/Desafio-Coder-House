@@ -46,7 +46,8 @@ Casas.push(new Casa(12,"Alquiler", "Caballito",4,120,300000,'https://images.pexe
  }
   function quitarBarrio() {
   let aQuitar = parseInt(prompt("Ingrese el barrio a quitar:"));
-  let resultado = barrios.splice(aQuitar, 1);
+  let indice=barrios.indexOf(aQuitar);
+  let resultado = barrios.splice(indice, 1);
   console.warn("Se eliminó el barrio:", resultado);
 }
 
