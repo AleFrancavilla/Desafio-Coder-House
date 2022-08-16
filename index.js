@@ -118,3 +118,20 @@ function recorrerElementos() {
 recorrerElementos()
 agregarBarrio()
 quitarBarrio()
+
+//Desafio DOM agrego un parrafo
+
+const titulo1=document.getElementById("titulo1")
+const titulo2=document.getElementById("titulo2")
+
+function cambiarTitulos() {
+  titulo1.innerText="Bienvenidos AF Propiedades"
+  titulo2.innerText="Comienza seleccionando el barrio donde deseas vivir!"
+}
+cambiarTitulos()
+
+function crearListaFooter() {
+  const listadoFooter= document.getElementById("listadoFooter")
+  listadoFooter.innerHTML="<li>Comprar</li><li>Vender</li><li>Alquilar</li><li>Garantia</li><li>Contacto</li><li>Terminos y Condiciones</li>"
+}
+crearListaFooter()
