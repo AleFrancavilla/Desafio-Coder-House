@@ -273,6 +273,10 @@ function mostrarCards(array) {
   });
 }
 
+localStorage.getItem("propiedad")
+const propiedadLS=localStorage.getItem("propiedad")
+
+
 //Ejemplo para usar select
 
 /*let select = document.getElementById('select')
