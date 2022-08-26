@@ -220,11 +220,19 @@ function cargoArrayBarrios() {
     selectTipo.innerHTML += `<option value="${propiedad}">${propiedad}</option>`
   });
   
+  /*Agrego operador And
+
+const tipoDeOperaciones={
+  opcion1:"Alquiler",
+  opcion2:"Venta",
+}
+const garantia=tipoDeOperaciones.opcion1==="Alquiler"
+console.log()*/
+
 }
 
+
 cargoArrayBarrios();
-
-
 
 
 selectBarrio.addEventListener("change", () => {
@@ -253,13 +261,13 @@ function mostrarCards(array) {
     // console.log(elemento);
     let div = document.createElement("div");
     div.className = "producto";
-    div.innerHTML = `<div class="card" style="width: 18rem;">
+    div.innerHTML = `<div class="card" style="width: 15rem;">
                           <img src="${elemento.img}" class="card-img-top" alt="foto casa">
                           <div class="card-body">
                           <h5 class="card-title"> Barrio ${elemento.barrio}</h5>
                           <p class="card-text">precio $${elemento.precio}</p>
                           <p class="card-text"> ${elemento.tipoDeOperacion}</p>
-                          <button class="btn btn-primary" id="${elemento.id}">Ver casa</button>
+                          <button class="btn btn-primary" id="${elemento.id}">Ver</button>
                           </div>
                   </div>`;
     divVivienda.appendChild(div);
@@ -298,8 +306,8 @@ function recorrerElementos() {
     }
 }
 recorrerElementos();
-agregarBarrio()
-  quitarBarrio()
+//agregarBarrio()
+  //quitarBarrio()
 
 //Desafio DOM agrego un parrafo
 
@@ -308,9 +316,13 @@ const titulo2 = document.getElementById("titulo2");
 
 function cambiarTitulos() {
   titulo1.innerText = "Bienvenidos AF Propiedades";
-  titulo2.innerText = "Comienza seleccionando el barrio donde deseas vivir!";
+  titulo2.innerText = "Comience eligiendo que Operacion desea Realizar?";
 }
 cambiarTitulos();
+
+
+necesitaGarantia()
+
 
 //FOOTER
 function crearListaFooter() {

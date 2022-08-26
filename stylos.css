@@ -1,101 +1,106 @@
 body{
-background-color: bisque;
-
-}
-/*Estilos a Index*/
-div{
+  background-color: bisque;
   
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
   }
-select#select{
-  margin: 20px;
-}
-
-h1 {font-family: Arial, Helvetica, sans-serif;
-  font-style: oblique;
-  text-align: center;
-}
-h2{font-family: Arial, Helvetica, sans-serif;
-  font-style: oblique;
-  text-align: center;
-}
-
-
-
-.par1{
-    font-family: sans-serif;
-    font-size: 25px;
-    font-style: oblique;
-    color: black;
-    margin-left: 100px;
-
-}
-
-
-.formularioContainer {
- 
-    font-family: sans-serif;
-    font-size: 15px;
-    color: black;
-    padding: 10px;
-    margin: 50px;
-    margin-left: 40%;
-    border-radius: 1rem;
-    background-color: lightsalmon;
-    max-width: 400px;
-    width: 90%;
+  /*Estilos a Index*/
+  div{
     
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+  select#select{
+    margin: 20px;
   }
   
-  .form {
-    display: grid;
-    gap: 1rem;
-    grid-auto-columns: center;
+  h1 {font-family: Arial, Helvetica, sans-serif;
+    font-style: oblique;
+    text-align: center;
+  }
+  h2{font-family: Arial, Helvetica, sans-serif;
+    font-style: oblique;
+    text-align: center;
   }
   
-  form label {
-    width: 70%;
-    font-family: inherit;
-    font-size: 1rem;
-    padding: 0.8em;
+  
+  
+  .par1{
+      font-family: sans-serif;
+      font-size: 25px;
+      font-style: oblique;
+      color: black;
+      margin-left: 100px;
   
   }
-
-  form input {
-    width: 70%;
-    font-family: inherit;
-    font-size: 1rem;
-    padding: 0.8em;
-    border: 2px solid lightslategrey;
-  }
   
-  h1 {
-    font-family: sans-serif;
-    font-size: 2rem;
-    color: black;
-    font-weight: bold;
-    margin: 40px;
-  }
-
-
-  #botones{
-    display: flex;
-    justify-content: space-between;
-    border-radius: 3px;
-    margin-top: 30px;
-    margin-bottom: 20px;
-  }
-  select{
-    width: 250px;
-    position: relative;
-  }
-  label{
-    font-family: sans-serif;
-    font-size: 1rem;
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-
-  }
+  
+  .formularioContainer {
+   
+      font-family: sans-serif;
+      font-size: 15px;
+      color: black;
+      padding: 10px;
+      margin: 50px;
+      margin-left: 40%;
+      border-radius: 1rem;
+      background-color: lightsalmon;
+      max-width: 400px;
+      width: 90%;
+      
+    }
+    
+    .form {
+      display: grid;
+      gap: 1rem;
+      grid-auto-columns: center;
+    }
+    
+    form label {
+      width: 70%;
+      font-family: inherit;
+      font-size: 1rem;
+      padding: 0.8em;
+    
+    }
+  
+    form input {
+      width: 70%;
+      font-family: inherit;
+      font-size: 1rem;
+      padding: 0.8em;
+      border: 2px solid lightslategrey;
+    }
+    
+    h1 {
+      font-family: sans-serif;
+      font-size: 2rem;
+      color: black;
+      font-weight: bold;
+      margin: 40px;
+    }
+  
+  
+    #botones{
+      display: flex;
+      justify-content: space-between;
+      border-radius: 3px;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+    select{
+      width: 250px;
+      position: relative;
+    }
+    label{
+      font-family: sans-serif;
+      font-size: 1rem;
+      color: rgb(0, 0, 0);
+      font-weight: bold;
+  
+    }
+  
+    #historial{
+      list-style: none;
+      flex-direction: column;
+    }

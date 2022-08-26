@@ -2,28 +2,27 @@ let NombreCompleto= document.getElementById('nombre')
 let IngreseEmail=document.getElementById('email')
 let montoDeAlquiler= document.getElementById('Alquiler')
 let form = document.getElementById('form')
-
+valores = [];
 //local Storage para el formulario
-let theForm = document.querySelector("#form"),
-    valores = []; 
+let theForm = document.querySelector("#form")
+console.log(theForm)
 
-[].forEach.call(theForm.elements, 
-
-    function(elemento){ 
-    valores.push(elemento.value); 
-});
-
-localStorage.form = JSON.stringify({
-    elementos: theForm.innerHTML,
-           datos: valores 
-});
-
-
+    
 
 
 form.addEventListener('submit',(e)=>{
         e.preventDefault()
         cotizarGarantia()
+        
+
+        valores.forEach.call(theForm.elements, 
+            
+            function(elemento){ 
+               
+                valores.push(elemento.value); 
+            }
+        );
+        localStorage.form = JSON.stringify(valores);
 })
 
 function cotizarGarantia() {
@@ -47,5 +46,14 @@ function cotizarGarantia() {
 }
 
 
- 
+ function recuperarLS() {
+    let arrayValores = JSON.parse(localStorage.getItem('form'))
+    if(arrayValores){
+        let historial = document.getElementById('historial')
+        arrayValores.forEach(item=>{
+            historial.innerHTML += `<li>${item}</li>`
+        })
+    }
+ }
 
+ recuperarLS()
