@@ -251,6 +251,16 @@ selectOperacion.addEventListener("change", () => {
  
     mostrarCards(Casas.filter((item) => item.tipoDeOperacion == selectOperacion.value.toUpperCase()));
   
+  //Operador terniario
+const casita ={
+  operacion:"Alquiler",
+  tipo:"inmueble"
+  
+  }
+  const garantia=(casita.operacion==="Alquiler") 
+garantia? alert("Puede cotizar su garantia con nosotros"):alert(NaN)
+  
+  //---------------------------------------------------------------------
 });
 
 mostrarCards(Casas);
@@ -319,9 +329,6 @@ function cambiarTitulos() {
   titulo2.innerText = "Comience eligiendo que Operacion desea Realizar?";
 }
 cambiarTitulos();
-
-
-necesitaGarantia()
 
 
 //FOOTER
