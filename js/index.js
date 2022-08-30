@@ -13,10 +13,10 @@ class Casa {
     this.tipoDeOperacion = tipoDeOperacion.toUpperCase();
     this.barrio = barrio;
     this.habitaciones = habitaciones;
-    this.m2 = m2;
-    this.precio = precio;
+    this.m2 = parseInt (m2)||1;
+    this.precio =parseInt (precio)||1;
     this.img = img;
-    this.tipoDePropiedad = tipoPropiedad.toUpperCase();
+    this.tipoDePropiedad =tipoPropiedad.toUpperCase();
   }
 }
 
@@ -30,8 +30,8 @@ const barrios = [
   "Belgrano",
   "Palermo",
 ];
-const tipoDeOperacion = ["Alquiler", "Venta"];
-const tipoDePropiedad = ["Casa", "Departamento", "Lote", "Local Comercial"];
+const tipoDeOperacion = ["Todas","Alquiler", "Venta"];
+const tipoDePropiedad = ["Todas","Casa", "Departamento", "Lote", "Local Comercial"];
 const Casas = [];
 
 Casas.push(
@@ -191,7 +191,7 @@ Casas.push(
   )
 );
 
-
+/*
 function agregarBarrio() {
   let nuevoBarrio = prompt("ingrese el barrio en donde desea vivir:");
   barrios.push(nuevoBarrio);
@@ -201,9 +201,9 @@ function quitarBarrio() {
   let indice = barrios.indexOf(aQuitar);
   let resultado = barrios.splice(indice, 1);
   console.warn("Se eliminó el barrio:", resultado);
-}
+}*/
 
-let divVivienda = document.getElementById("vivendas");
+let divVivienda = document.getElementById("viviendas");
 // console.log(divVivienda);
 const selectBarrio = document.querySelector("#seleccionarBarrio");
 const selectOperacion = document.querySelector("#selectOperacion");
@@ -236,12 +236,20 @@ cargoArrayBarrios();
 
 
 selectBarrio.addEventListener("change", () => {
-  if (selectBarrio.value == "todos") {
+  //Se cambia por Ternario
+  /*if (selectBarrio.value == "todos") {
     mostrarCards(Casas);
   } else {
     mostrarCards(Casas.filter((item) => item.barrio == selectBarrio.value));
   }
-});
+  });*/
+  selectBarrio.value == "todos" ?
+    mostrarCards(Casas)
+  :
+    mostrarCards(Casas.filter((item) => item.barrio == selectBarrio.value));
+  
+  });
+
 selectTipo.addEventListener("change", () => {
  
     mostrarCards(Casas.filter((item) => item.tipoDePropiedad == selectTipo.value.toUpperCase()));
@@ -252,20 +260,23 @@ selectOperacion.addEventListener("change", () => {
     mostrarCards(Casas.filter((item) => item.tipoDeOperacion == selectOperacion.value.toUpperCase()));
   
   //Operador terniario
+
+
 const casita ={
   operacion:"Alquiler",
   tipo:"inmueble"
   
   }
   const garantia=(casita.operacion==="Alquiler") 
-garantia? alert("Puede cotizar su garantia con nosotros"):alert(NaN)
+garantia? alert("Puede cotizar su garantia con nosotros"):alert(null)
   
   //---------------------------------------------------------------------
 });
 
 mostrarCards(Casas);
+//DESESTRUCTURACION
 
-function mostrarCards(array) {
+/*function mostrarCards(array) {
   divVivienda.innerHTML = "";
   array.forEach((elemento) => {
     // console.log(elemento);
@@ -280,15 +291,43 @@ function mostrarCards(array) {
                           <button class="btn btn-primary" id="${elemento.id}">Ver</button>
                           </div>
                   </div>`;
+    divVivienda.appendChild(div);*/
+
+    
+function mostrarCards(array) {
+  divVivienda.innerHTML = "";
+  array.forEach((item) => {
+    // console.log(elemento);
+const{img,barrio,precio,tipoDeOperacion,id}=item
+
+    let div = document.createElement("div");
+    div.className = "producto";
+    div.innerHTML = `<div class="card" style="width: 15rem;">
+                          <img src="${img}" class="card-img-top" alt="foto casa">
+                          <div class="card-body">
+                          <h5 class="card-title"> Barrio ${barrio}</h5>
+                          <p class="card-text">precio $${precio}</p>
+                          <p class="card-text"> ${tipoDeOperacion}</p>
+                          <button class="btn btn-primary" id="${id}">Ver</button>
+                          </div>
+                  </div>`;
     divVivienda.appendChild(div);
 
-    let btn = document.getElementById(`${elemento.id}`);
+   /* let btn = document.getElementById(`${elemento.id}`);
     btn.addEventListener("click", () => {
       let casa = Casas.find((item) => item.id == elemento.id);
       localStorage.setItem("propiedad", JSON.stringify(casa));
       location.href = "http://127.0.0.1:5500/vs/casa.html";
     });
+  });*/
+  let btn = document.getElementById(`${id}`);
+  btn.addEventListener("click", () => {
+    let casa = Casas.find((item) => item.id == id);
+    localStorage.setItem("propiedad", JSON.stringify(casa));
+    location.href = "http://127.0.0.1:5500/vs/casa.html";
   });
+});
+
 }
 
 localStorage.getItem("propiedad")
