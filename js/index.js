@@ -261,14 +261,22 @@ selectOperacion.addEventListener("change", () => {
   
   //Operador terniario
 
-
 const casita ={
   operacion:"Alquiler",
   tipo:"inmueble"
   
   }
+  //Desafio librerias
   const garantia=(casita.operacion==="Alquiler") 
-garantia? alert("Puede cotizar su garantia con nosotros"):alert(null)
+garantia? /*alert("Puede cotizar su garantia con nosotros")*/
+Swal.fire({
+  title: "Necesita una Garantia? Cotice con nosotros",
+  showDenyButton: true,
+  confirmButtonText: 'Si por favor',
+  denyButtonText: `No gracias`,
+})
+:
+alert(null)
   
   //---------------------------------------------------------------------
 });
@@ -303,12 +311,12 @@ const{img,barrio,precio,tipoDeOperacion,id}=item
     let div = document.createElement("div");
     div.className = "producto";
     div.innerHTML = `<div class="card" style="width: 15rem;">
-                          <img src="${img}" class="card-img-top" alt="foto casa">
+                          <img src="${img}" class="card-img-top img-fluid" alt="foto casa">
                           <div class="card-body">
                           <h5 class="card-title"> Barrio ${barrio}</h5>
                           <p class="card-text">precio $${precio}</p>
                           <p class="card-text"> ${tipoDeOperacion}</p>
-                          <button class="btn btn-primary" id="${id}">Ver</button>
+                          <button class="btn btn-outline-primary btn-block" id="${id}">Ver</button>
                           </div>
                   </div>`;
     divVivienda.appendChild(div);
